@@ -1,8 +1,9 @@
-FROM node:alpine
+FROM node:current-alpine
 
 RUN echo -e "https://mirrors.ustc.edu.cn/alpine/latest-stable/main\nhttps://mirrors.ustc.edu.cn/alpine/latest-stable/community" > /etc/apk/repositories && \
     apk update && \
-    apk upgrade
+    apk upgrade && \
+    apk --no-cache add ca-certificates
 
 RUN npm install cnpm -g --registry=https://registry.npm.taobao.org
 
