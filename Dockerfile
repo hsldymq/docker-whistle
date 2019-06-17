@@ -12,4 +12,3 @@ RUN cnpm install -g whistle
 ENTRYPOINT ["whistle", "run"]
 
 EXPOSE 8899
-EXPOSE 8900
