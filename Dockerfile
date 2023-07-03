@@ -1,6 +1,6 @@
-FROM node:18-alpine3.14
+FROM node:18-alpine3.17
 
-RUN echo -e "https://mirrors.ustc.edu.cn/alpine/v3.14/main\nhttps://mirrors.ustc.edu.cn/alpine/v3.14/community" > /etc/apk/repositories && \
+RUN echo -e "https://mirrors.ustc.edu.cn/alpine/v3.17/main\nhttps://mirrors.ustc.edu.cn/alpine/v3.17/community" > /etc/apk/repositories && \
     apk update && \
     apk upgrade && \
     apk --no-cache add ca-certificates
