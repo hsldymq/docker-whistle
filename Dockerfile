@@ -1,13 +1,12 @@
-FROM node:18-alpine3.17
+FROM node:22-alpine3.18
 
-RUN echo -e "https://mirrors.ustc.edu.cn/alpine/v3.17/main\nhttps://mirrors.ustc.edu.cn/alpine/v3.17/community" > /etc/apk/repositories && \
+RUN echo -e "https://mirrors.ustc.edu.cn/alpine/v3.18/main\nhttps://mirrors.ustc.edu.cn/alpine/v3.18/community" > /etc/apk/repositories && \
     apk update && \
     apk upgrade && \
     apk --no-cache add ca-certificates
 
-RUN npm install -g whistle --registry=https://registry.npm.taobao.org
+RUN npm install -g whistle@2.9.70
 
 ENTRYPOINT ["w2", "run"]
 
 EXPOSE 8899
-EXPOSE 8900
